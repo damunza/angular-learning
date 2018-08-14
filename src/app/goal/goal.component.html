@@ -19,10 +19,13 @@
           </div>
           <div class="col-6">
 
-            <button  (click)='toogleDetails(i)'>Toogle Details</button><!--i registers the position of each item on the list. It becomes an output property binding ass when the button is clicked it triggers the toogleDetails function-->
+            <!-- <button  (click)='toogleDetails(i)'>Toogle Details</button> |comment here| i registers the position of each item on the list. It becomes an output property binding ass when the button is clicked it triggers the toogleDetails function-->
+
+            <button class="btn btn-primary" (click)=goToUrl(goal.id)>View Details</button>
+           <button class="btn btn-danger" (click) = 'deleteGoal(i)'> Delete Goal </button>
 
           </div>
-            <app-goal-details *ngIf='goal.showDescription' [goal]='goal'  (isComplete)= 'deleteGoal($event,i)'></app-goal-details>
+            <!-- <app-goal-details *ngIf='goal.showDescription' [goal]='goal'  (isComplete)= 'deleteGoal($event,i)'></app-goal-details> -->
         </div>
     </ul>
        <!--end  -->
@@ -34,6 +37,8 @@
      <!--end  -->
 <p *ngIf='goals.length > 5'>You have too many goals</p>
 
+<!--Quote container  -->
+
 <div class="container">
   <div class="row">
     <blockquote class="text-center text-lg">
@@ -42,3 +47,5 @@
     </blockquote>
   </div>
 </div>
+
+<!--quote end  -->
